@@ -4,8 +4,8 @@
 ###---Basic Definitions---###{{{
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 25
-gaps outer 20
+gaps inner 40
+gaps outer 10
 font pango:System San Francisco Display 12
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
