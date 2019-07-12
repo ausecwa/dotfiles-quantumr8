@@ -1,9 +1,8 @@
 # Dotfiles
-## created by quantumr8
+created by quantumr8
 
 
-### System Specs
-<p>  
+## System Specs
 
 **OS:** Manjaro Linux x86_64
 
@@ -28,5 +27,36 @@
 **CPU:** Intel i7-7500U (4) @ 3.500GHz
 
 **GPU:** Intel HD Graphics 620
-</p>
 
+link to my [wallpaper](https://imgur.com/8eYlgzb)
+
+### Images
+
+![simple_sunset.jpg]
+(https://i.imgur.com/arqKxHn.png)
+
+### To Do
+
+This is my first rice and it's still in the works. Here are some things I plan to add or improve:
+
+i3:
+  - [X] Color palette
+  - [X] Tranceparency
+  - [X] Automatic Tilling
+  - [X] Startup scripts
+  - [X] Custom keybindings
+  - [ ] Polybar status bar (powerline theme)
+  - [ ] Theme lock screen
+
+zsh:
+  - [X] Fix terminal startup errors
+  - [ ] Add more info to prompt
+  - [ ] Add plugins
+
+vim:
+  - [ ] Add powerline theme
+  - [ ] Add syntax highlighting
+
+ranger:
+  - [ ] Set vim as default
+  - [ ] Fix theme after using ranger
