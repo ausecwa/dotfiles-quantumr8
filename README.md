@@ -4,6 +4,7 @@
 
 ### System Specs
 <p>  
+
 **OS:** Manjaro Linux x86_64
 
 **Host:** Q324UAK 1.0
