@@ -21,7 +21,7 @@ exec qutebrowser
 
 ###---Music/Misc Bindings---###{{{
 # Media player Definitions
-set $music urxvt -e ncmpcpp
+set $music $term -e ncmpcpp
 set $pause --no-startup-id mpc toggle
 set $truepause --no-startup-id mpc pause
 set $next --no-startup-id mpc next
@@ -142,7 +142,7 @@ bindsym $mod+Shift+x          exec sudo shutdown -h now
 #bindsym $mod+c                exec
 #bindsym $mod+Shift+c          exec
 
-bindsym $mod+v                exec urxvt -e ncmpcpp -s visualizer
+bindsym $mod+v                exec $term -e ncmpcpp -s visualizer
 #bindsym $mod+Shift+v          exec
 
 bindsym $mod+b                exec $prev
