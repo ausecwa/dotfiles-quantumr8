@@ -28,35 +28,34 @@ created by quantumr8
 
 **GPU:** Intel HD Graphics 620
 
-link to my [wallpaper](https://imgur.com/8eYlgzb)
+Link to my [wallpaper](https://imgur.com/8eYlgzb)
 
 ### Images
 
-![simple_sunset.jpg]
-(https://i.imgur.com/arqKxHn.png)
+![simple_sunset.png](https://i.imgur.com/arqKxHn.png)
 
 ### To Do
 
-This is my first rice and it's still in the works. Here are some things I plan to add or improve:
+This is my first rice and it's still in the works. So here are some things I'm still working on or plan to add:
 
-i3:
-  - [X] Color palette
-  - [X] Tranceparency
-  - [X] Automatic Tilling
-  - [X] Startup scripts
-  - [X] Custom keybindings
-  - [ ] Polybar status bar (powerline theme)
-  - [ ] Theme lock screen
+* i3:
+    - [X] Color palette
+    - [X] Tranceparency
+    - [X] Automatic Tilling
+    - [X] Startup scripts
+    - [X] Custom keybindings
+    - [ ] Polybar status bar (powerline theme)
+    - [ ] Theme lock screen
 
-zsh:
-  - [X] Fix terminal startup errors
-  - [ ] Add more info to prompt
-  - [ ] Add plugins
+* zsh:
+    - [X] Fix terminal startup errors
+    - [ ] Add more info to prompt
+    - [ ] Add plugins
 
-vim:
-  - [ ] Add powerline theme
-  - [ ] Add syntax highlighting
+* vim:
+    - [ ] Add powerline theme
+    - [ ] Add syntax highlighting
 
-ranger:
-  - [ ] Set vim as default
-  - [ ] Fix theme after using ranger
+* ranger:
+    - [ ] Set vim as default
+    - [ ] Fix theme after using ranger
