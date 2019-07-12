@@ -11,7 +11,7 @@
 
 **Kernel:** 4.14.130-1-MANJARO
 
-**Packages:** 1317 (pacman)
+**Packages:** 1321 (pacman)
 
 **Shell:** zsh 5.7.1
 
