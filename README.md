@@ -1,31 +1,31 @@
 # Dotfiles
-### created by quantumr8
+## created by quantumr8
 
-<p>
----- System Specs ----
-  
-OS: Manjaro Linux x86_64
 
-Host: Q324UAK 1.0
+### System Specs
+<p>  
+**OS:** Manjaro Linux x86_64
 
-Kernel: 4.14.130-1-MANJARO
+**Host:** Q324UAK 1.0
 
-Packages: 1317 (pacman)
+**Kernel:** 4.14.130-1-MANJARO
 
-Shell: zsh 5.7.1
+**Packages:** 1317 (pacman)
 
-Resolution: 1920x1080
+**Shell:** zsh 5.7.1
 
-WM: i3
+**Resolution:** 1920x1080
 
-Theme: Ant-Dracula [GTK2/3]
+**WM:** i3
 
-Icons: Sweet-Purple-Filled [GTK2/3]
+**Theme:** Ant-Dracula [GTK2/3]
 
-Terminal: alacritty
+**Icons:** Sweet-Purple-Filled [GTK2/3]
 
-CPU: Intel i7-7500U (4) @ 3.500GHz
+**Terminal:** alacritty
 
-GPU: Intel HD Graphics 620
+**CPU:** Intel i7-7500U (4) @ 3.500GHz
+
+**GPU:** Intel HD Graphics 620
 </p>
 
