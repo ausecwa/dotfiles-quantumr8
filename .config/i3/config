@@ -90,7 +90,7 @@ bindsym $mod+r                exec $term -e ranger
 bindsym $mod+Shift+r          restart
 
 bindsym $mod+t                split toggle
-bindsym $mod+Shift+t          gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t          gaps inner current set 40; gaps outer current set 10
 
 #bindsym $mod+y                exec
 bindsym $mod+Shift+y          resize shrink width 10 px
