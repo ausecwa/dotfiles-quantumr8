@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sam/Pictures/wallpapers/ring.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#05001E",
+        "foreground": "#a9bff1",
+        "cursor": "#a9bff1"
+    },
+    "colors": {
+        "color0": "#05001E",
+        "color1": "#28029B",
+        "color2": "#64049F",
+        "color3": "#5B34D8",
+        "color4": "#9C05A2",
+        "color5": "#DB0FA4",
+        "color6": "#B33FD5",
+        "color7": "#a9bff1",
+        "color8": "#7685a8",
+        "color9": "#28029B",
+        "color10": "#64049F",
+        "color11": "#5B34D8",
+        "color12": "#9C05A2",
+        "color13": "#DB0FA4",
+        "color14": "#B33FD5",
+        "color15": "#a9bff1"
+    }
+}
