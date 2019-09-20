@@ -4,8 +4,8 @@
 ###---Basic Definitions---###{{{
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 40
-gaps outer 10
+gaps inner 30
+gaps outer 35
 font pango:System San Francisco Display 12
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
@@ -13,11 +13,15 @@ set $browser qutebrowser
 #}}}
 
 ###---Starting External Scripts---###{{{
-exec --no-startup-id compton -cCGf -b
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id $HOME/.config/i3/alternating_layout.py
-exec_always wal -i /home/sam/Pictures/wallpapers/simple_sunset.jpg
+exec_always wal -i $HOME/Pictures/wallpapers/ring.jpg
 exec discord
 exec qutebrowser
+exec --no-startup-id xfce4-power-manager # To monitor batttery
+exec --no-startup-id notify-send "Welcome back Sam!" # Greeting on startup
+exec --no-startup-id polybar mybar -r
+exec --no-startup-id $term
 #}}}
 
 ###---Music/Misc Bindings---###{{{
@@ -59,9 +63,9 @@ exec --no-startup-id $term -name dropdown
 #}}}
 
 ###---Basic Bindings---###{{{
-bindsym $mod+Return           exec $term
-bindsym $mod+Shift+Return     split horizontal ;; exec $term
-bindsym $mod+backslash        split vertical ;; exec $term
+bindsym $mod+Return           split horizontal ;; exec $term
+bindsym $mod+Shift+Return     split vertical ;; exec $term
+bindsym $mod+backslash        split toggle
 
 bindsym $mod+Shift+space      floating toggle
 bindsym $mod+space            focus mode_toggle
@@ -73,7 +77,7 @@ bindsym $mod+Shift+Escape     exec i3-msg exit
 bindsym $mod+Shift+Backspace  exec sudo reboot
 
 bindsym $mod+grave            exec [instance="dropdown"] scratchpad show ;; move position center
-bindsym $mod+Shift+Delete     exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e neofetch ; exec $term -e ranger
+bindsym $mod+Shift+Delete     exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e gotop ; exec $term -e ranger
 #}}}
 
 ###---Letter Key Binding---###{{{
@@ -83,14 +87,14 @@ bindsym $mod+Shift+q          kill
 bindsym $mod+w                exec --no-startup-id $browser
 #bindsym $mod+Shift+w          exec --no-startup-id $browser
 
-bindsym $mod+e                exec $term -e mutt
+bindsym $mod+e                exec $term -e tmux
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+r                exec $term -e ranger
 bindsym $mod+Shift+r          restart
 
 bindsym $mod+t                split toggle
-bindsym $mod+Shift+t          gaps inner current set 40; gaps outer current set 10
+bindsym $mod+Shift+t          gaps inner current set 30; gaps outer current set 35
 
 #bindsym $mod+y                exec
 bindsym $mod+Shift+y          resize shrink width 10 px
@@ -98,7 +102,7 @@ bindsym $mod+Shift+y          resize shrink width 10 px
 bindsym $mod+u                [instance="dropdown"] scratchpad show; move position center
 bindsym $mod+Shift+u          resize shrink height 10 px
 
-bindsym $mod+i                exec $term -e htop
+bindsym $mod+i                exec $term -e gotop
 bindsym $mod+Shift+i          resize grow height 10 px
 
 #bindsym $mod+o                exec
@@ -113,7 +117,7 @@ bindsym $mod+Shift+a          exec $term -e alsamixer
 bindsym $mod+s                gaps inner current plus 5
 bindsym $mod+Shift+s          gaps inner current minus 5
 
-bindsym $mod+d                exec rofi -show run
+bindsym $mod+d                exec rofi -show drun -columns 3
 bindsym $mod+Shift+d          gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f                fullscreen toggle
@@ -143,13 +147,13 @@ bindsym $mod+Shift+x          exec sudo shutdown -h now
 #bindsym $mod+c                exec
 #bindsym $mod+Shift+c          exec
 
-bindsym $mod+v                exec $term -e ncmpcpp -s visualizer
+bindsym $mod+v                exec $term -e cava
 #bindsym $mod+Shift+v          exec
 
 bindsym $mod+b                exec $prev
 #bindsym $mod+Shift+b          exec
 
-bindsym $mod+n                exec $next
+bindsym $mod+n                exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/sam/.i3/workspace-1.json'"
 #bindsym $mod+Shift+n          exec
 
 bindsym $mod+m                exec $music
@@ -157,16 +161,16 @@ bindsym $mod+Shift+m          exec $mute
 #}}}
 
 ###---Workspace Bindings---###{{{
-set $ws1 "1: "
-set $ws2 "2: "
+set $ws1 "1"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: Music"
+set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: Discord "
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -194,14 +198,16 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Assigned workspace programs
-#assign [class="Gnome-terminal"] $ws1
-assign [class="qutebrowser"] $ws2
-assign [class="discord"] $ws10
+#assign [class=alacritty] $ws1
+assign [class=qutebrowser|firefox] $ws2
+assign [class=code-oss|atom] $ws3
+assign [class=spotify|iTunes] $ws8
+assign [class=discord] $ws10
 
 workspace $ws8 gaps inner 0
-workspace $ws8 gaps outer 0
+#workspace $ws8 gaps outer 0
 workspace $ws10 gaps inner 0
-workspace $ws10 gaps outer 0
+#workspace $ws10 gaps outer 0
 #}}}
 
 ###---Colors---###{{{
@@ -216,6 +222,21 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
+
+# RGB
+#set $cyan    #4ec2f7
+#set $acqua	 #007089
+#set $magenta #af005f
+#set $silver  #e4e4e4
+#set $elegant #00002c
+#set $none    #00000000
+
+# Set some nice colors      border	 background text	   indicator
+#client.focused              $cyan	   $cyan      $elegant $cyan
+#client.unfocused            $elegant $elegant   $cyan    $elegant
+#client.focused_inactive     $acqua   $acqua     $silver  $acqua
+#client.urgent               $magenta $magenta   $silver  $magenta
+#client.placeholder          $magenta $magenta   $silver  $magenta
 #}}}
 
 ###---Function Bindings---###{{{
@@ -246,5 +267,15 @@ client.background       $bg
 #bindsym $mod+F12         exec
 #}}}
 
-###---Bar---###
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+###---Bar---###{{{
+
+# #2f343f
+
+# set colors
+set $bg-color            #000000
+set $inactive-bg-color   #000000
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+#}}}

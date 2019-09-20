@@ -1,164 +1,136 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#  _____    _
+# |__  /___| |__  _ __ ___
+#   / // __| '_ \| '__/ __|
+#  / /_\__ \ | | | | | (__
+# /____|___/_| |_|_|  \___|
 
 # Source colors from wallpaper
 source "$HOME/.cache/wal/colors.sh"
+wal -r
+source $(dirname $(gem which colorls))/tab_complete.sh
+clear
 
-# Path to your oh-my-zsh installation.
+# Syntax highlighting and tab completion
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -Uz compinit
+
+# Aliases for a few useful commands
+alias config='/usr/bin/git --git-dir=/home/sam/.cfg/ --work-tree=/home/sam'
+alias mirrorUpdate="sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+#alias yaourt="yaourt --pager --color"
+#alias pacmanGhost="~/.pacman.sh"
+#alias shivita="toilet -f mono12 -F rainbow 'andrea' | ponythink -f winona"
+#alias emacs="emacs -nw"
+alias cat="bat"
+alias ls="colorls"
+#alias ip="ip -c"
+#alias rm="rm -i"
+alias x="ranger"
+alias t="tmux"
+alias h="htop"
+alias go="gotop"
+alias chat="discurses"
+alias calc="bc"
+
+# Show OS info when opening a new terminal
+# neofetch
+
+# Font mode for powerlevel9k
+P9K_MODE="nerdfont-complete"
+
+# Prompt elements
+P9K_LEFT_PROMPT_ELEMENTS=(custom_user dir vcs)
+P9K_RIGHT_PROMPT_ELEMENTS=(background_jobs go_version rbenv)
+
+# Set name of the theme to load.
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Prompt settings
+P9K_PROMPT_ON_NEWLINE=true
+P9K_RPROMPT_ON_NEWLINE=true
+P9K_MULTILINE_FIRST_PROMPT_PREFIX_ICON=$'%K{white}%k'
+P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON=$'%K{green}%F{black} \uf155 %f%F{green}%k\ue0b0%f '
+
+# Separators
+P9K_LEFT_SEGMENT_SEPARATOR_ICON=$'\ue0b0'
+P9K_LEFT_SUBSEGMENT_SEPARATOR_ICON=$'\ue0b1'
+P9K_RIGHT_SEGMENT_SEPARATOR_ICON=$'\ue0b2'
+P9K_RIGHT_SUBSEGMENT_SEPARATOR_ICON=$'\ue0b7'
+
+# Dir colours
+P9K_DIR_HOME_BACKGROUND='black'
+P9K_DIR_HOME_FOREGROUND='white'
+P9K_DIR_HOME_SUBFOLDER_BACKGROUND='black'
+P9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
+P9K_DIR_DEFAULT_BACKGROUND='yellow'
+P9K_DIR_DEFAULT_FOREGROUND='black'
+P9K_DIR_SHORTEN_LENGTH=2
+P9K_DIR_SHORTEN_STRATEGY="truncate_from_right"
+
+# OS segment
+P9K_OS_ICON_BACKGROUND='black'
+P9K_LINUX_ICON='%F{cyan} \uf303 %F{white} arch %F{cyan}linux%f'
+
+# VCS icons
+P9K_VCS_GIT_ICON=$'\uf1d2 '
+P9K_VCS_GIT_GITHUB_ICON=$'\uf113 '
+P9K_VCS_GIT_GITLAB_ICON=$'\uf296 '
+P9K_VCS_BRANCH_ICON=$''
+P9K_VCS_STAGED_ICON=$'\uf055'
+P9K_VCS_UNSTAGED_ICON=$'\uf421'
+P9K_VCS_UNTRACKED_ICON=$'\uf00d'
+P9K_VCS_INCOMING_CHANGES_ICON=$'\uf0ab '
+P9K_VCS_OUTGOING_CHANGES_ICON=$'\uf0aa '
+
+# VCS colours
+P9K_VCS_MODIFIED_BACKGROUND='blue'
+P9K_VCS_MODIFIED_FOREGROUND='black'
+P9K_VCS_UNTRACKED_BACKGROUND='green'
+P9K_VCS_UNTRACKED_FOREGROUND='black'
+P9K_VCS_CLEAN_BACKGROUND='green'
+P9K_VCS_CLEAN_FOREGROUND='black'
+
+# VCS CONFIG
+P9K_VCS_SHOW_CHANGESET=false
+
+# Status
+P9K_STATUS_OK_ICON=$'\uf164'
+P9K_STATUS_ERROR_ICON=$'\uf165'
+P9K_STATUS_ERROR_CR_ICON=$'\uf165'
+
+# Battery
+P9K_BATTERY_LOW_FOREGROUND='red'
+P9K_BATTERY_CHARGING_FOREGROUND='blue'
+P9K_BATTERY_CHARGED_FOREGROUND='green'
+P9K_BATTERY_DISCONNECTED_FOREGROUND='blue'
+P9K_BATTERY_VERBOSE=true
+
+# Programming languages
+P9K_RBENV_PROMPT_ALWAYS_SHOW=true
+P9K_GO_VERSION_PROMPT_ALWAYS_SHOW=true
+
+# User with skull
+user_with_skull() {
+    echo -n "\ufb8a $(whoami)"
+}
+P9K_CUSTOM_USER="user_with_skull"
+
+# Command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Command execution time stamp shown in the history command output.
+HIST_STAMPS="mm/dd/yyyy"
+
+# Plugins to load
+plugins=(git virtualenv)
 export ZSH="/home/sam/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+path+=(
+    $(ruby -e 'puts File.join(Gem.user_dir, "bin")')
+)
 
 
-
-###### Prompt Stylization ######
-
-export DEFAULT_USER="v1rgul"
-export TERM="xterm-256color"
-export ZSH=/home/sam/.oh-my-zsh
-
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="awesome-fontconfig"
-
-
-POWERLEVEL9K_FOLDER_ICON=""
-POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
-POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
-
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-
-POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
-
-POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='black'
-POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='178'
-POWERLEVEL9K_NVM_BACKGROUND="238"
-POWERLEVEL9K_NVM_FOREGROUND="green"
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="blue"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015"
-
-POWERLEVEL9K_TIME_BACKGROUND='255'
-#POWERLEVEL9K_COMMAND_TIME_FOREGROUND='gray'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
-
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
-POWERLEVEL9K_SHOW_CHANGESET=true
-
-HYPHEN_INSENSITIVE="true"
-COMPLETION_WAITING_DOTS="true"
-# /!\ do not use with zsh-autosuggestions
-
-plugins=(tig gitfast colorize command-not-found cp dirhistory sudo)
-# /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
-
-source $ZSH/oh-my-zsh.sh
-
-
-#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-#ZSH_HIGHLIGHT_STYLES[cursor]='bold'
-
-#ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[builtin]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[function]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
-#ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=green,bold'
-
+# Functions
 
 rule () {
 	print -Pn '%F{blue}'
@@ -192,9 +164,3 @@ ranger-cd() {
 }
 zle -N ranger-cd
 bindkey '^o' ranger-cd
-
-# Startup
-
-cat ~/.cache/wal/sequences
-#wal -q -i /home/sam/Pictures/wallpapers/simple_sunset.jpg
-alias config='/usr/bin/git --git-dir=/home/sam/.cfg/ --work-tree=/home/sam'
