@@ -35,7 +35,7 @@ Link to my [wallpaper](https://imgur.com/isZCBtl)
 
 ### Images
 
-![simple_sunset.png](https://imgur.com/isZCBtl.png)
+![ring.png](https://i.imgur.com/McEoDJQ.png)
 
 ### To Do
 
