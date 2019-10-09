@@ -32,12 +32,12 @@ c.url.default_page = 'https://mystart.com/'
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'yt': 'https://www.youtube.com/results?search_query={}', 'archwiki': 'https://wiki.archlinux.org/index.php?search={}', 'porn': 'https://www.pornhub.com/video/search?search={}', 'reddit': 'https://www.reddit.com/search?q={}', 'movie': 'https://www0.solarmovies.co/search/{}.html'}
+c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'yt': 'https://www.youtube.com/results?search_query={}', 'archwiki': 'https://wiki.archlinux.org/index.php?search={}', 'zz': 'https://www.pornhub.com/video/search?search={}', 'reddit': 'https://www.reddit.com/search?q={}', 'movie': 'https://www0.solarmovies.co/search/{}.html'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'https://mystart.com'
 
 # Bindings for normal mode
-config.bind('j', 'scroll-px 0 150')
-config.bind('k', 'scroll-px 0 -150')
+config.bind('j', 'scroll-px 0 200')
+config.bind('k', 'scroll-px 0 -200')
