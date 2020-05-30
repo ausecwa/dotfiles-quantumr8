@@ -39,6 +39,11 @@ alias neofetch="neofetch | lolcat"
 #alias ip="ip -c"
 #alias rm="rm -i"
 
+# Git aliases
+alias gaa='git add --all'
+alias gp='git push'
+alias gst='git status'
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Show OS info when opening a new terminal
