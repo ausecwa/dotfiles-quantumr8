@@ -3,6 +3,14 @@
 # Created by quantumr8
 # Custom install script to get my normal looking terminal and programs
 
+# Default values of arguments
+SHOULD_INITIALIZE=0
+SKIP_OHMYZSH=0
+WORK_DIRECTORY="~/.dotfiles"
+HELP_MSG_DISPLAY=0
+QUIET_MODE=0
+OTHER_ARGUMENTS=()
+
 # Error clean up
 handle_exit_code() {
   ERROR_CODE="$?";
@@ -15,12 +23,24 @@ handle_exit_code() {
 }
 trap "handle_exit_code" EXIT;
 
-# Default values of arguments
-SHOULD_INITIALIZE=0
-SKIP_OHMYZSH=0
-WORK_DIRECTORY="~/.dotfiles"
-HELP_MSG=0
-OTHER_ARGUMENTS=()
+# Help message function
+help_msg () {
+  echo -e "---\e[34m Dotfiles install script help \e[0m---";
+  echo -e "Syntax: \e[36m./install.zsh [-h|i|q|z]\e[0m";
+  echo  "Options:"
+  echo -e "\e[32mh  --help\e[0m     Print this help."
+  echo -e "\e[32mi  --init\e[0m     Initialize pacman keys and mirrors."
+  echo -e "\e[32mq\e[0m             Quiet mode."
+  echo -e "\e[32mz  --skipzsh\e[0m  Skip installing oh-my-zsh."
+  echo "\nThank you for using quantumr8's dotfiles."
+  echo -e "\e[93mEnjoy!";
+  exit 0;
+}
+
+# Pacman init keys and mirrors
+install_ohmyzsh() {
+  sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+}
 
 # Loop through arguments and process them
 for arg in "$@"
@@ -35,8 +55,13 @@ do
     shift
     ;;
     -h|--help)
-    HELP_MSG=1
-    shift;;
+    HELP_MSG_DISPLAY=1
+    shift
+    ;;
+    -q)
+    QUIET_MODE=1
+    shift
+    ;;
     *)
     OTHER_ARGUMENTS+=("$1")
     shift
@@ -44,28 +69,19 @@ do
   esac
 done
 
+### Run functions
 # Help message
-if [ "$HELP_MSG" -eq "1" ]; then
-  echo -e "---\e[34m Dotfiles install script help \e[0m---";
-  echo -e "Syntax: \e[36m./install.zsh [-h|i|q|z]\e[0m";
-  echo  "Options:"
-  echo -e "h  --help     Print this help."
-  echo -e "i  --init     Initialize pacman keys and mirrors."
-  echo -e "q             Quiet mode."
-  echo -e "z  --skipzsh  Skip installing oh-my-zsh."
-  echo "\nThank you for using quantumr8's dotfiles."
-  echo -e "\e[93mEnjoy!";
-  exit 0;
+if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
+  help_msg;
 fi
-
 # Init pacman
-#./pacman.sh
-
-# Install dependencies
-#sudo pacman -S --needed --noconfirm - < pkglist.txt
-# Install oh-my-zsh
-#sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
+if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
+  sudo pacman -S --needed --noconfirm - < pkglist.txt;
+fi
+#
+if [ "$SKIP_OHMYZSH" -ne "1"]; then
+  install_ohmyzsh;
+fi
 
 
 # Stow config files
