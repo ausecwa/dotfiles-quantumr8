@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 # Created by quantumr8
 # Configure pacman after fresh install of arch linux
 

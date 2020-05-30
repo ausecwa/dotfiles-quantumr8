@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 # created by quantumr8
 # Custom install script to get my normal looking terminal and programs
 
