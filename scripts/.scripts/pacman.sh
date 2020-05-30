@@ -13,6 +13,6 @@ sudo reflector --country 'United States' -p https -l 10 --sort rate --save /etc/
 sudo pacman -Syu
 
 # Automate reflector on boot
-sudo cp ../../other/reflector.service /etc/systemd/system/reflector.service
+sudo cp ~/.dotfiles/other/reflector.service /etc/systemd/system/reflector.service
 sudo systemctl enable reflector
 sudo systemctl start reflector
