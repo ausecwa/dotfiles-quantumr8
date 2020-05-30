@@ -79,7 +79,7 @@ if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
   sudo pacman -S --needed --noconfirm - < pkglist.txt;
 fi
 #
-if [ "$SKIP_OHMYZSH" -ne "1"]; then
+if [ "$SKIP_OHMYZSH" -ne "1" ]; then
   install_ohmyzsh;
 fi
 
@@ -88,4 +88,5 @@ fi
 
 
 # Done
-figlet 'Done' | lolcat
+echo -e "\e[32mDone."
+figlet 'Enjoy!' | lolcat
