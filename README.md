@@ -1,63 +1,45 @@
-# Dotfiles
-created by quantumr8
+# Quantumr8's dotfiles
+
+This is mainly for my keepsake, but if you want can get my dotfiles here.
+
+![Screenshot of my windows terminal](https://i.imgur.com/jQ9EOZ2.png)
+
+## Installation
+
+**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don't want or need. Use this at your own risk!
+
+
+### Additional downloads
+Nerd font is required for powerline10k to work. You can use any nerd font but I picked this one [`Hack bold`](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete.ttf)
+
+Windows Terminal config [pastebin](https://pastebin.com/X2GbRtD8)
+
+### Using Git and stow script
+
+[Important: I'm still working on the install scripts so they won't work yet.] You can clone this repository whenever you want. (I keep it in `~/.dotfiles` and use stow to link the config files.) The script will also install all the needed packages.
+
+
+```bash
+git clone https://github.com/quantumr8/dotfiles.git && cd dotfiles && source install.sh
+```
+
+To update, `cd` into `dotfiles` repository and run:
+
+```bash
+source update.sh
+```
 
 
 ## System Specs
 
-**OS:** Manjaro Linux x86_64
+**OS:** Windows 10 Home x86_64
 
-**Host:** Q324UAK 1.0
+**WLS:** Arch linux
 
-**Kernel:** 4.14.141-1-MANJARO
+**Terminal:** Windows Terminal
 
-**Packages:** 1379 (pacman)
+**Programs:** Editor:neovim,vscode; Task:Gotop; Discord:discurses
 
-**Shell:** zsh 5.7.1
+Link to the [wallpaper](https://wallhaven.cc/w/r2okx1)
+Link to the [wallpaper(girl)](https://wallhaven.cc/w/lqlmml)
 
-**Resolution:** 1920x1080
-
-**WM:** i3
-
-**Theme:** Ant-Dracula [GTK2/3]
-
-**Icons:** Sweet-Purple-Filled [GTK2/3]
-
-**Terminal:** kitty
-
-**CPU:** Intel i7-7500U (4) @ 3.500GHz
-
-**GPU:** Intel HD Graphics 620
-
-**Programs:** Editor:Vim,Atom; Audio:Cava; Task:Gotop; Chat:Discurses
-
-
-Link to my [wallpaper](https://imgur.com/isZCBtl)
-
-### Images
-
-![ring.png](https://i.imgur.com/McEoDJQ.png)
-
-### To Do
-
-This is my first rice and it's still in the works. So here are some things I'm still working on or plan to add:
-
-* i3:
-    - [X] Tranceparency
-    - [X] Automatic Tilling
-    - [X] Polybar status bar
-    - [ ] Fix polybar workspace icons
-    - [ ] Theme lock screen
-
-* zsh:
-    - [X] Fix terminal startup errors
-    - [X] Add plugins
-    - [ ] Add more info to prompt
-
-* vim:
-    - [X] Add syntax highlighting
-    - [ ] Add powerline theme
-    - [ ] Other plugins
-
-* ranger:
-    - [X] Set vim as default
-    - [ ] Fix theme after using ranger
