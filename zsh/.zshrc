@@ -43,6 +43,7 @@ alias neofetch="neofetch | lolcat"
 alias gaa='git add --all'
 alias gp='git push'
 alias gst='git status'
+alias gtp='git-ftp push'
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
