@@ -33,11 +33,6 @@ alias vim="nvim"
 alias x="ranger"
 alias pls="sudo !!"
 alias neofetch="neofetch | lolcat"
-#alias config='/usr/bin/git --git-dir=/home/sam/.cfg/ --work-tree=/home/sam'
-#alias pacmanGhost="~/.pacman.sh"
-#alias shivita="toilet -f mono12 -F rainbow 'andrea' | ponythink -f winona"
-#alias ip="ip -c"
-#alias rm="rm -i"
 
 # Git aliases
 alias gaa='git add --all'
