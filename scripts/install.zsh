@@ -100,7 +100,7 @@ if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
 fi
 # Stow config files
 echo "Stowing config files..."
-stow -v --target=$HOME --dir="${WORK_DIR}" bashtop fzf git neofetch ranger vim/.vimrc vim/.vim zsh
+stow -v --target=$HOME --dir=$WORK_DIR bashtop fzf git neofetch ranger vim zsh
 echo "Stowing done."
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
@@ -117,5 +117,7 @@ if [ "$SKIP_OHMYZSH" -eq "1" ]; then
 fi
 
 # Done
+source ~/.zshrc
+source ~/.p10k.zsh
 echo -e "\e[32mDone."
 figlet 'Enjoy!' | lolcat
