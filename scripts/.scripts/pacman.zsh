@@ -8,7 +8,7 @@ sudo pacman-key --populate
 
 # Install reflector and update mirror list
 sudo pacman -Syu --noconfirm
-sudo pacman -S reflector
+sudo pacman -S --noconfirm reflector
 sudo reflector --country 'United States' -p https -l 10 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syu
 
