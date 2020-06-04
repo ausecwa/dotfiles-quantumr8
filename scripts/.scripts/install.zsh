@@ -7,7 +7,6 @@
 SHOULD_INITIALIZE=0
 SKIP_OHMYZSH=1
 SKIP_PACKAGES=1
-WORK_DIRECTORY="~/.dotfiles"
 HELP_MSG_DISPLAY=0
 QUIET_MODE=0
 OTHER_ARGUMENTS=()
@@ -76,17 +75,21 @@ do
   esac
 done
 
+
 ### Run functions
 # Help message
 if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
   help_msg;
 fi
+# Stow config files
+echo "Stowing config files..."
+stow -nv --target=$HOME --dir=$HOME/.dotfiles bashtop fzf git neofetch ranger scripts vim zsh
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
   echo "Running pacman.zsh..."
   source ./pacman.zsh;
 fi
-if [ "$INSTALL_PACKAGES" -eq "1" ]; then
+if [ "$SKIP_PACKAGES" -eq "1" ]; then
   echo "Installing packages...";
   sudo pacman -S --needed --noconfirm - < pkglist.txt;
 fi
@@ -94,11 +97,6 @@ fi
 if [ "$SKIP_OHMYZSH" -eq "1" ]; then
   install_ohmyzsh;
 fi
-
-
-# Stow config files
-echo "Stowing config files..."
-stow -nv --target=~ --dir=~/.dotfiles bashtop fzf git neofetch pictures ranger scripts vim zsh
 
 # Done
 echo -e "\e[32mDone."
