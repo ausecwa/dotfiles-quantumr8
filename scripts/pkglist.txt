@@ -1,4 +1,5 @@
 git
+stow
 wget
 python
 python-pip
@@ -6,7 +7,6 @@ jdk8-openjdk
 bashtop
 nmap
 tmux
-lynx
 neovim
 ranger
 w3m
