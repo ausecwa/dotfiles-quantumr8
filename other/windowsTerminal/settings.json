@@ -1,0 +1,126 @@
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+
+    "profiles":
+    {
+        "defaults":
+        {
+            // Put settings here that you want to apply to all profiles
+            // disabled "fontFace": "SauceCodePro NF"
+            "fontFace": "Hack Nerd Font",
+            "fontSize": 10,
+            "acrylicOpacity": 0.7,
+            "cursorShape": "vintage",
+            "closeOnExit": true
+        },
+        "list":
+        [
+            {
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl",
+                "hidden": false,
+                "useAcrylic": true,
+                "colorScheme": "One Half Dark",
+                "startingDirectory": "\\\\wsl$\\Arch\\home\\sam\\"
+            },
+            {
+                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+                "name": "Ubuntu-18.04",
+                "source": "Windows.Terminal.Wsl",
+                "hidden": true,
+                "useAcrylic": true,
+                "colorScheme": "One Half Dark",
+                "cursorHeight": 25,
+                "padding": "0, 0, 0, 0",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                // Make changes here to the cmd.exe profile
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "cmd",
+                "commandline": "cmd.exe",
+                "hidden": false,
+                "useAcrylic": true,
+                "cursorShape": "bar"
+            },
+            {
+                // Make changes here to the powershell.exe profile
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false,
+                "useAcrylic": true,
+                "colorScheme": "One Half Dark",
+                "cursorColor": "#FFFFFF",
+                "cursorShape": "bar",
+                "padding": "0, 0, 0, 0",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure",
+                "hidden": true
+            }
+        ]
+    },
+
+    // Add custom color schemes to this array
+    "schemes": [
+      {
+        "name": "One Half Dark",
+        "background": "#282C34",
+        "black": "#282C34",
+        "blue": "#61AFEF",
+        "brightBlack": "#5A6374",
+        "brightBlue": "#61AFEF",
+        "brightCyan": "#56B6C2",
+        "brightGreen": "#98C379",
+        "brightPurple": "#C678DD",
+        "brightRed": "#E06C75",
+        "brightWhite": "#DCDFE4",
+        "brightYellow": "#E5C07B",
+        "cyan": "#56B6C2",
+        "foreground": "#DCDFE4",
+        "green": "#98C379",
+        "purple": "#C678DD",
+        "red": "#E06C75",
+        "white": "#DCDFE4",
+        "yellow": "#E5C07B"
+      },
+      {
+        "name": "Solarized Dark",
+        "background": "#073642",
+        "black": "#073642",
+        "blue": "#268BD2",
+        "brightBlack": "#002B36",
+        "brightBlue": "#839496",
+        "brightCyan": "#93A1A1",
+        "brightGreen": "#586E75",
+        "brightPurple": "#6C71C4",
+        "brightRed": "#CB4B16",
+        "brightWhite": "#FDF6E3",
+        "brightYellow": "#657B83",
+        "cyan": "#2AA198",
+        "foreground": "#FDF6E3",
+        "green": "#859900",
+        "purple": "#D33682",
+        "red": "#D30102",
+        "white": "#EEE8D5",
+        "yellow": "#B58900"
+      }
+    ],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
