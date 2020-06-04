@@ -105,11 +105,11 @@ echo "Stowing done."
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
   echo "Running pacman.zsh..."
-  source "$WORK_DIR"/scripts/.scripts/pacman.zsh;
+  source "$WORK_DIR"/scripts/pacman.zsh;
 fi
 if [ "$SKIP_PACKAGES" -eq "1" ]; then
   echo "Installing packages...";
-  sudo pacman -S --needed --noconfirm - < "$WORK_DIR"/scripts/.scripts/pkglist.txt;
+  sudo pacman -S --needed --noconfirm - < "$WORK_DIR"/scripts/pkglist.txt;
 fi
 # Install oh-my-zsh
 if [ "$SKIP_OHMYZSH" -eq "1" ]; then
