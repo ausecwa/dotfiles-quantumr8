@@ -83,7 +83,7 @@ if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
 fi
 # Stow config files
 echo "Stowing config files..."
-stow -nv --target=$HOME --dir=$HOME/.dotfiles bashtop fzf git neofetch ranger scripts vim zsh
+stow -v --target=$HOME --dir=$HOME/.dotfiles bashtop fzf git neofetch ranger scripts vim zsh
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
   echo "Running pacman.zsh..."

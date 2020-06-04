@@ -13,8 +13,7 @@ w3m
 file
 lsd
 bat
-steghide
 figlet
 lolcat
-matrixc
+cmatrix
 neofetch
