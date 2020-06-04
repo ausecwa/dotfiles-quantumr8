@@ -48,7 +48,7 @@ install_ohmyzsh() {
   echo "installing oh-my-zsh..."
   cd ~
   sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
@@ -100,7 +100,7 @@ if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
 fi
 # Stow config files
 echo "Stowing config files..."
-stow -v --target=$HOME --dir="${WORK_DIR}" bashtop fzf git neofetch ranger scripts vim zsh
+stow -v --target=$HOME --dir="${WORK_DIR}" bashtop fzf git neofetch ranger vim/.vimrc vim/.vim zsh
 echo "Stowing done."
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
