@@ -100,7 +100,13 @@ if [ "$HELP_MSG_DISPLAY" -eq "1" ]; then
 fi
 # Stow config files
 echo "Stowing config files..."
-stow -v --target=$HOME --dir=$WORK_DIR bashtop fzf git neofetch ranger vim zsh
+if [ -f ~/.zshrc ]; then
+   mv ~/.zshrc ~/.zshrc.old
+fi
+if [ -f ~/.fzf.zsh ]; then
+      mv ~/.fzf.zsh ~.fzf.zsh.old
+fi
+stow -v --no-folding --target=$HOME --dir=$WORK_DIR bashtop git ranger fzf neofetch vim zsh
 echo "Stowing done."
 # Init pacman
 if [ "$SHOULD_INITIALIZE" -eq "1" ]; then
