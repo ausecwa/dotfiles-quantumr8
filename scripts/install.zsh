@@ -104,7 +104,7 @@ if [ -f ~/.zshrc ]; then
    mv ~/.zshrc ~/.zshrc.old
 fi
 if [ -f ~/.fzf.zsh ]; then
-      mv ~/.fzf.zsh ~.fzf.zsh.old
+      mv ~/.fzf.zsh ~/.fzf.zsh.old
 fi
 stow -v --no-folding --target=$HOME --dir=$WORK_DIR bashtop git ranger fzf neofetch vim zsh
 echo "Stowing done."
