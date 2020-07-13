@@ -56,7 +56,8 @@ plugins=(git colorize virtualenv zsh-autosuggestions zsh-syntax-highlighting)
 export ZSH="/home/sam/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="FG=244"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f0000,underline"
+ZSH_AUTOSUGESST_STRATEGY=(history completion)
 POWERLEVEL9K_LEGACY_ICON_SPACING=true
 
 # Functions
@@ -77,6 +78,8 @@ function _my_clear() {
 }
 zle -N _my_clear
 bindkey '^l' _my_clear
+bindkey '^ ' autosuggest-accept
+bindkey '^]' autosuggest-toggle
 
 
 # Ctrl-O opens zsh at the current location, and on exit, cd into ranger's last location.
