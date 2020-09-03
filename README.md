@@ -20,7 +20,7 @@ You can clone this repository whenever you want. (I keep it in `~/.dotfiles` and
 
 
 ```bash
-git clone https://github.com/quantumr8/dotfiles.git && cd dotfiles && source install.zsh
+git clone https://github.com/quantumr8/.dotfiles.git && cd .dotfiles && source install.zsh
 ```
 
 To update, `cd` into `dotfiles` repository and run:
