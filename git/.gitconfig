@@ -1,8 +1,8 @@
 [user]
-	email = ross.samuel.17@gmail.com
-	name = quantumr8
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    email = ross.samuel.17@gmail.com
+    name = quantumr8
+    signingkey = 1E1F028B52AE0ED1
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[tag]
+    gpgSign = true

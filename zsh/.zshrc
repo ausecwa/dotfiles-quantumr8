@@ -32,7 +32,8 @@ alias t="tmux"
 alias vim="nvim"
 alias x="ranger"
 alias pls="sudo !!"
-# alias neofetch="neofetch | lolcat"
+alias vi="nvim"
+alias neofetch="neofetch | lolcat"
 
 # Git aliases
 alias gaa='git add --all'
