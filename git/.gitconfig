@@ -1,7 +1,7 @@
 [user]
     email = ross.samuel.17@gmail.com
     name = quantumr8
-    signingkey = 1E1F028B52AE0ED1
+    signingkey = ross.samuel.17@gmail.com
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [tag]

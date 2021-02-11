@@ -12,7 +12,6 @@ fi
 # /____|___/_| |_|_|  \___|
 
 # Sources
-PATH="$HOME/.node_modules/bin:$PATH"
 export TERM="xterm-256color"
 export npm_config_prefix=~/.node_modules
 
