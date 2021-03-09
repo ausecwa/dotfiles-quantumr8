@@ -20,7 +20,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
-alias pacman='pacman --color=auto'
+alias pacman='sudo pacman --color=auto'
 
 # Aliases for a few useful commands
 alias ls='lsd'
@@ -33,7 +33,7 @@ alias t="tmux"
 alias vim="nvim"
 alias x="ranger"
 alias pls="sudo !!"
-alias vi="nvim"
+#alias vi="nvim"
 alias neofetch="neofetch | lolcat"
 
 # Git aliases
