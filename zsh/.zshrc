@@ -14,6 +14,7 @@ fi
 # Sources
 export TERM="xterm-256color"
 export npm_config_prefix=~/.node_modules
+export PATH=$PATH:~/.node_modules/bin
 
 # color
 alias grep='grep --color=auto'
@@ -29,7 +30,7 @@ alias lla='lsd -la'
 alias lt='lsd --tree'
 alias cat="bat"
 alias mirrorUpdate="sudo reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
-alias t="tmux"
+alias t="todo.sh -c"
 alias vim="nvim"
 alias x="ranger"
 alias pls="sudo !!"
