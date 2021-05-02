@@ -6,3 +6,5 @@
     insteadOf = https://github.com/
 [tag]
     gpgSign = true
+[init]
+	defaultBranch = master
