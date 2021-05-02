@@ -14,6 +14,7 @@ fi
 # Sources
 export TERM="xterm-256color"
 export npm_config_prefix=~/.node_modules
+export PATH=$PATH:~/.node_modules/bin
 
 # color
 alias grep='grep --color=auto'
