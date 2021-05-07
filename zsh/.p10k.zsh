@@ -208,7 +208,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=016
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -299,11 +299,11 @@
   # For example, given these settings:
   #
      typeset -g POWERLEVEL9K_DIR_CLASSES=(
-       '/minecraft(|/*)'  MINECRAFT     ''
+       '/srv/game(|/*)'   GAMESERVER    ''
        '~/downloads(|/*)' DOWNLOADS     ''
        '~/.config(|/*)'   CONFIG        '漣'
        '/mnt(|/*)'        DRIVE         ''
-       '~/documents(|/*)' DOCUMENTS     ''
+       '~/docs(|/*)'      DOCUMENTS     ''
        '~/.scripts(|/*)'  SCRIPTS       ''
        '/etc(|/*)'        ETC           ''
        '~(|/*)'           HOME          ''
@@ -512,8 +512,8 @@
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=15
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=38
   # Show duration of the last command if takes longer than this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -742,10 +742,10 @@
 
   ##################################[ disk_usage: disk usage ]##################################
   # Colors for different levels of disk usage.
-  # typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND=3
-  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND=016
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND=15
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND=16
   # typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_FOREGROUND=0
-  typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_BACKGROUND=3
+  typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_BACKGROUND=16
   # typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_FOREGROUND=7
   typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_BACKGROUND=1
   # Thresholds for different levels of disk usage (percentage points).
@@ -774,8 +774,8 @@
 
   ######################################[ ram: free RAM ]#######################################
   # RAM color.
-  # typeset -g POWERLEVEL9K_RAM_FOREGROUND=0
-  # typeset -g POWERLEVEL9K_RAM_BACKGROUND=3
+  typeset -g POWERLEVEL9K_RAM_FOREGROUND=0
+  typeset -g POWERLEVEL9K_RAM_BACKGROUND=38
   # Custom icon.
   # typeset -g POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -866,11 +866,11 @@
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=0
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=198
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=005
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=015
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=38
   # Default context color (no privileges, no SSH).
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=0
-  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=015
+  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=38
 
   # Context format when running with privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'

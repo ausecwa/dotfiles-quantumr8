@@ -8,3 +8,5 @@
     gpgSign = true
 [init]
 	defaultBranch = master
+[commit]
+	gpgsign = true
