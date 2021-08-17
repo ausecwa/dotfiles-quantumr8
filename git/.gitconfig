@@ -1,12 +1,12 @@
 [user]
-    email = ross.samuel.17@gmail.com
-    name = quantumr8
-    signingkey = ross.samuel.17@gmail.com
+    email = sam@rosss.dev
+    name = 'Sam Ross'
+    sigingkey = sam@rosss.dev
 [url "git@github.com:"]
     insteadOf = https://github.com/
-[tag]
-    gpgSign = true
+#[tag]
+#    gpgSign = true
 [init]
-	defaultBranch = master
-[commit]
-	gpgsign = true
+    defaultBranch = master
+#[commit]
+#    gpgsign = true
