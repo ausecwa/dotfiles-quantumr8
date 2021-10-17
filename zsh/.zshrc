@@ -67,23 +67,26 @@ alias ls='lsd'
 alias lls='lsd -l'
 alias lla='lsd -la'
 alias lt='lsd --tree'
-#alias cat="bat"
+alias cat="batcat"
 alias t="todo.sh -c"
 alias vim="nvim"
 alias x="ranger"
-alias pls="sudo !!"
 #alias vi="nvim"
 #alias neofetch="neofetch | lolcat"
 
 # Git aliases
 alias gaa='git add --all'
-alias gp='git push'
+alias gps='git push'
+alias gpl='git pull'
 alias gst='git status'
 alias gtp='git-ftp push'
 
 
 # Show OS info when opening a new terminal
 # neofetch
+
+# X11 Display for images
+export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
 
 # Command auto-correction.
 ENABLE_CORRECTION="true"

@@ -1,7 +1,7 @@
 [user]
     email = sam@rosss.dev
     name = 'Sam Ross'
-    sigingkey = sam@rosss.dev
+#    sigingkey = DFF806A2B58B5A0D
 [url "git@github.com:"]
     insteadOf = https://github.com/
 #[tag]
