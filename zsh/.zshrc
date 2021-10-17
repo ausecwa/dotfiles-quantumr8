@@ -71,12 +71,9 @@ alias cat="batcat"
 alias t="todo.sh -c"
 alias vim="nvim"
 alias x="ranger"
-<<<<<<< HEAD
-=======
 alias pls="sudo !!"
 alias localip="ip addr show eth1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'"
 alias publicip="curl -4 icanhazip.com"
->>>>>>> c930e266f8f9669e45df7351622cc1fa9dcfd5dc
 #alias vi="nvim"
 #alias neofetch="neofetch | lolcat"
 
