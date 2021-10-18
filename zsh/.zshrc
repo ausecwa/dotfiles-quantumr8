@@ -89,9 +89,6 @@ alias gtp='git-ftp push'
 # Show OS info when opening a new terminal
 # neofetch
 
-# X11 Display for images
-export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0
-
 # Command auto-correction.
 ENABLE_CORRECTION="true"
 
