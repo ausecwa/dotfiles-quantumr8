@@ -52,6 +52,7 @@ fi
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Sources
+export GPG_TTY=$(tty)
 export TERM="xterm-256color"
 export npm_config_prefix=~/.node_modules
 export PATH=$PATH:~/.node_modules/bin
