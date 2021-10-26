@@ -98,6 +98,10 @@ HIST_STAMPS="mm/dd/yyyy"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f0000,underline"
 ZSH_AUTOSUGESST_STRATEGY=(history completion)
 POWERLEVEL9K_LEGACY_ICON_SPACING=true
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 # Functions
 
@@ -137,7 +141,13 @@ zle -N ranger-cd
 bindkey '^o' ranger-cd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ $SSH_CLIENT =~ .*51.* ]]; then
+	[[ ! -f ~/.p10k-ssh.zsh ]] || source ~/.p10k-ssh.zsh
+elif [[ $GPG_TTY =~ \/dev\/tty. ]]; then
+	[[ ! -f ~/.p10k-tty.zsh ]] || source ~/.p10k-tty.zsh
+else
+	[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
