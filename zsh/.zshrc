@@ -10,7 +10,7 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
-export ZSH="/home/sam/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 source ~/.zinit/bin/zinit.zsh
 typeset -A ZINIT
 
