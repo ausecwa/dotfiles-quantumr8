@@ -141,7 +141,7 @@ zle -N ranger-cd
 bindkey '^o' ranger-cd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-if [[ $SSH_CLIENT =~ .*51.* ]]; then
+if [[ $SSH_CLIENT =~ .*\s2022 ]]; then
 	[[ ! -f ~/.p10k-ssh.zsh ]] || source ~/.p10k-ssh.zsh
 elif [[ $GPG_TTY =~ \/dev\/tty. ]]; then
 	[[ ! -f ~/.p10k-tty.zsh ]] || source ~/.p10k-tty.zsh
